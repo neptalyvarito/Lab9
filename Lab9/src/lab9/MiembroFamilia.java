@@ -8,14 +8,15 @@ public class MiembroFamilia extends Lab9 implements Usuario{
     
     private String nombre;
     private String parentesco;
-    private List<Dispositivo> LISTADISPOSITIVO;
-    private List<MiembroFamilia> LISTAFAMILIARES;
+    private String user;
+    private String contraseña;
+    private List<Dispositivo> listaDispositivos;
+    private List<MiembroFamilia> listaFamiliares;
     
-    public MiembroFamilia(String nombre, String parentesco,List<Dispositivo> LISTADISPOSITIVO,  List<MiembroFamilia> LISTAFAMILIARES ){
+    public MiembroFamilia(String nombre, String parentesco){
         this.nombre = nombre;
         this.parentesco = parentesco;
-        this.LISTADISPOSITIVO = LISTADISPOSITIVO;
-        this.LISTAFAMILIARES = LISTAFAMILIARES;
+
     }
     @Override
     public void prenderDispositivo(Dispositivo dispositivo) {
@@ -32,16 +33,16 @@ public class MiembroFamilia extends Lab9 implements Usuario{
         this.nombre = nombre;
     }
     public List<Dispositivo> getListaDispositivo(){
-        return this.LISTADISPOSITIVO;
+        return this.listaDispositivos;
     }
     public void setListaDispositivo(List<Dispositivo> LISTADISPO){
-        this.LISTADISPOSITIVO = LISTADISPO;
+        this.listaDispositivos = LISTADISPO;
     }
     public List<MiembroFamilia> getListaFamiliares(){
-        return this.LISTAFAMILIARES;
+        return this.listaFamiliares;
     }
     public void setListaFamiliares(List<MiembroFamilia> LISTAFAM){
-        this.LISTAFAMILIARES = LISTAFAM;
+        this.listaFamiliares = LISTAFAM;
     }
     
 }

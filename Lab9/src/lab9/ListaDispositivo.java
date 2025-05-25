@@ -9,22 +9,22 @@ import java.util.ArrayList;
 
 public class ListaDispositivo {
     
-    public static List<Dispositivo> lista = new ArrayList<>();
+    public static List<Dispositivo> LISTA = new ArrayList<>();
     
     public static void agregarDispositivo(Dispositivo disposi){
-        lista.add(disposi);
+        LISTA.add(disposi);
     }
     public static void eliminarDispositivo(String busqueda){
         int contador = 0;
-        for(Dispositivo diposi : lista){
+        for(Dispositivo diposi : LISTA){
             if(diposi.getNombre().equals(busqueda)){                
-                lista.remove(contador);
+                LISTA.remove(contador);
                 break;
             }
             contador ++;
         }
     }
     public static List<Dispositivo> getLista(){
-        return lista;
+        return LISTA;
     }
 }
