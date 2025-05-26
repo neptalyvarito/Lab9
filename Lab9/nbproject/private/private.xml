@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Lab9/src/lab9/LogIN.java</file>
-            <file>file:/C:/Lab9/src/lab9/Lab9.java</file>
-            <file>file:/C:/Lab9/src/lab9/Usuario.java</file>
-            <file>file:/C:/Lab9/src/lab9/Dispositivo.java</file>
-            <file>file:/C:/Lab9/src/lab9/miembroFamilia.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/AgregarDispositivo.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/LogIn.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/Lab9.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/GestionarDispositivos.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/MiembroFamilia.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/LogInValidaciones.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/ListaDispositivo.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/PantallaUsuarioPrincipal.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/Dispositivo.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/EliminarDispositivo.java</file>
+            <file>file:/C:/lab9/Lab9/Lab9/src/lab9/Usuario.java</file>
         </group>
     </open-files>
 </project-private>

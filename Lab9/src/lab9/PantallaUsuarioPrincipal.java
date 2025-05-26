@@ -8,7 +8,7 @@ package lab9;
  *
  * @author neptaly
  */
-public class PantallaUsuarioPrincipal extends javax.swing.JFrame {
+public class PantallaUsuarioPrincipal extends javax.swing.JFrame{
 
     /**
      * Creates new form PantallaUsuarioPrincipal
@@ -31,7 +31,12 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame {
         bienvenidaNombre = new javax.swing.JLabel();
         btnGestionarDispositivos = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         btnVerMisDispositos.setText("<html>    Ver mis<br>dispositivos</html>"); // NOI18N
         btnVerMisDispositos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -88,12 +93,16 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerMisDispositosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerMisDispositosActionPerformed
-        // TODO add your handling code here:
+        new PantallaControlDispositivos().setVisible(true);
     }//GEN-LAST:event_btnVerMisDispositosActionPerformed
 
     private void btnGestionarDispositivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionarDispositivosActionPerformed
         new GestionarDispositivos().setVisible(true);
     }//GEN-LAST:event_btnGestionarDispositivosActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        bienvenidaNombre.setText(LogIn.mf.getNombre());
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -125,7 +134,7 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaUsuarioPrincipal().setVisible(true);
+                
             }
         });
     }

@@ -31,7 +31,7 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
         btnApagar = new javax.swing.JButton();
         btnPrender = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         boxListaDispositivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         boxListaDispositivo.addActionListener(new java.awt.event.ActionListener() {

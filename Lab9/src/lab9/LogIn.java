@@ -83,19 +83,22 @@ public class LogIn extends javax.swing.JFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    public static MiembroFamilia mf = new MiembroFamilia("Alvaro", "Padre", "nepta", "123");
     
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
         
+        MiembroFamilia obj = new MiembroFamilia("Elias", "Hermano", "Elias", "321");
+        mf.agregarFamiliar(obj);
         Integer flag = null;
         LogInValidaciones val = new LogInValidaciones();
-        MiembroFamilia mf = new MiembroFamilia("Alvaro", "Mayo", "nepta", "123");
-        
         do{
+            
         String usuario = getUser.getText();
         String contraseña = getPassword.getText();
         flag = val.EXISTE(mf, usuario, contraseña);
         getUser.setText(" ");
         getPassword.setText(" ");
+        
         }while(flag == null);
         
         if(flag == 1){

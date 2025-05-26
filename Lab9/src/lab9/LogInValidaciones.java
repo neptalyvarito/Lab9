@@ -9,17 +9,21 @@ package lab9;
  * @author neptaly
  */
 public class LogInValidaciones {
-    
+    public static MiembroFamilia buscado;
     public static Integer EXISTE(MiembroFamilia mf, String user, String contraseña){
+        
         Integer flag = null;
+        if(mf.getUser() == null || mf.getContraseña() == null) return null;
+        
         if((mf.getUser().equals(user)) && (mf.getContraseña().equals(contraseña))){
+            buscado = mf;
             return flag = 1;
         }
-        else{
-            for(MiembroFamilia bs : mf.getListaFamiliares()){
-                if((mf.getUser().equals(user)) && (mf.getContraseña().equals(contraseña))){
-                    return flag = 2;
-                }
+        for(MiembroFamilia bs : mf.getListaFamiliares()){
+            if((bs.getUser().equals(user)) && (bs.getContraseña().equals(contraseña))){
+                buscado = bs;
+                return flag = 2;
+                    
             }
         }
         return flag;

@@ -58,4 +58,13 @@ public class MiembroFamilia extends Lab9 implements Usuario{
     public void setContraseña(String contraseña){
         this.contraseña = contraseña;
     }
+    public void agregarFamiliar(MiembroFamilia mf){
+        if(this.listaFamiliares == null){
+            this.listaFamiliares = new ArrayList<>();
+        }
+        this.listaFamiliares.add(mf);
+    }
+     public void eliminarFamiliar(MiembroFamilia mf){
+        this.listaFamiliares.add(mf);
+    }
 }
