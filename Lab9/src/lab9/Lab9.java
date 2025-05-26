@@ -13,6 +13,7 @@ public class Lab9 {
     public static Scanner sn = new Scanner(System.in);
     
     public static void main(String[] args) {
+       
         new LogIn().setVisible(true);
     }
     

@@ -8,14 +8,16 @@ public class MiembroFamilia extends Lab9 implements Usuario{
     
     private String nombre;
     private String parentesco;
-    private String user;
+    private String user;    
     private String contraseña;
     private List<Dispositivo> listaDispositivos;
     private List<MiembroFamilia> listaFamiliares;
     
-    public MiembroFamilia(String nombre, String parentesco){
+    public MiembroFamilia(String nombre, String parentesco, String user, String contraseña){
         this.nombre = nombre;
         this.parentesco = parentesco;
+        this.contraseña = contraseña;
+        this.user = user;
 
     }
     @Override
@@ -44,5 +46,16 @@ public class MiembroFamilia extends Lab9 implements Usuario{
     public void setListaFamiliares(List<MiembroFamilia> LISTAFAM){
         this.listaFamiliares = LISTAFAM;
     }
-    
+    public String getUser(){
+        return this.user;
+    }
+    public void setUser(String user){
+        this.user = user;
+    }
+    public String getContraseña(){
+        return this.contraseña;
+    }
+    public void setContraseña(String contraseña){
+        this.contraseña = contraseña;
+    }
 }
