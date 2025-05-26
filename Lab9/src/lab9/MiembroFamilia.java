@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static lab9.ListaDispositivo.LISTA;
 
-public class MiembroFamilia extends Lab9 implements Usuario{
+public class MiembroFamilia implements Usuario{
     
     private String nombre;
     private String parentesco;
