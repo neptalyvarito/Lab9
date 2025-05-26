@@ -27,4 +27,10 @@ public class ListaDispositivo {
     public static List<Dispositivo> getLista(){
         return LISTA;
     }
+    public static Dispositivo buscarDispositivo(String nombre){
+        for(Dispositivo dis : ListaDispositivo.getLista()){
+            if(dis.getNombre().equals(nombre)) return dis;    
+        }
+        return null;
+    }
 }

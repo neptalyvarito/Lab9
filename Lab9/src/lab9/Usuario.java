@@ -9,6 +9,6 @@ package lab9;
  * @author neptaly
  */
 public interface Usuario {
-    void prenderDispositivo(Dispositivo dispositivo);
-    void apagarDispositivo(Dispositivo dispositivo);
+    String prenderDispositivo(Dispositivo dispositivo);
+    String apagarDispositivo(Dispositivo dispositivo);
 }

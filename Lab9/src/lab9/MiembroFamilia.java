@@ -20,13 +20,15 @@ public class MiembroFamilia extends Lab9 implements Usuario{
         this.user = user;
 
     }
+    
     @Override
-    public void prenderDispositivo(Dispositivo dispositivo) {
-       escribirConsola("Usuario " + this.nombre +" está prendiendo "+ dispositivo.getNombre());
+    public String prenderDispositivo(Dispositivo dispositivo) {
+       return "Usuario " + this.nombre +" está prendiendo "+ dispositivo.getNombre();
     }
+    
     @Override
-    public void apagarDispositivo(Dispositivo dispositivo) {
-       escribirConsola("Usurio " + this.nombre + " está apagando " + dispositivo.getNombre());
+    public String apagarDispositivo(Dispositivo dispositivo) {
+       return "Usurio " + this.nombre + " está apagando " + dispositivo.getNombre();
     }
     public String getNombre(){
         return this.nombre;
@@ -66,5 +68,11 @@ public class MiembroFamilia extends Lab9 implements Usuario{
     }
      public void eliminarFamiliar(MiembroFamilia mf){
         this.listaFamiliares.add(mf);
+    }
+    public void agregarDispositivo(Dispositivo dispositivo){
+        if(this.listaDispositivos == null){
+            this.listaDispositivos = new ArrayList<>();
+        }
+        this.listaDispositivos.add(dispositivo);
     }
 }
