@@ -78,4 +78,8 @@ public class MiembroFamilia extends Lab9 implements Usuario{
         }
         this.listaDispositivos.add(dispositivo);
     }
+    @Override
+    public String toString() {
+        return  nombre + "       |   " + parentesco;
+    }
 }
