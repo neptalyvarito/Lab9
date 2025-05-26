@@ -21,15 +21,8 @@ public class MiembroFamilia extends Lab9 implements Usuario{
         this.user = user;
 
     }
-    public void Eliminar(String busqueda){
-        int contador = 0;
-        for(Dispositivo diposi : listaDispositivos){
-            if(diposi.getNombre().equals(busqueda)){
-                listaDispositivos.remove(contador);
-                break;
-            }
-            contador ++;
-        }
+    public void eliminarDispositivo(int indice){
+        listaDispositivos.remove(indice);
     }
     @Override
     public String prenderDispositivo(Dispositivo dispositivo) {

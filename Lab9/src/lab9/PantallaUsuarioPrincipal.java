@@ -74,9 +74,9 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame{
                         .addComponent(bienvenidaNombre))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnVerMisDispositos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
+                        .addGap(46, 46, 46)
                         .addComponent(btnGestionarDispositivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
