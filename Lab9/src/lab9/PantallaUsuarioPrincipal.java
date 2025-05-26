@@ -130,7 +130,7 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame{
     }//GEN-LAST:event_formWindowOpened
 
     private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioActionPerformed
-        new AgregarUsuario(user).setVisible(true);
+        new AgregarUsuario(this.user).setVisible(true);
     }//GEN-LAST:event_btnAgregarUsuarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

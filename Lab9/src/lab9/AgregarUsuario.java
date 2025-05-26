@@ -13,11 +13,11 @@ public class AgregarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form AgregarUsuario
      */
-    public String nombre;
-    public String parentesco;
-    public String correo;
-    public String contrasena;
-    public MiembroFamilia user;
+    public static String nombre;
+    public static String parentesco;
+    public static String correo;
+    public static String contrasena;
+    public static MiembroFamilia user;
     public AgregarUsuario(MiembroFamilia user) {
         initComponents();
         this.user = user;
@@ -136,22 +136,26 @@ public class AgregarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void getNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getNombreActionPerformed
-        nombre = getNombre.getText();
+    
     }//GEN-LAST:event_getNombreActionPerformed
 
     private void getParentescoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getParentescoActionPerformed
-        parentesco = getParentesco.getText();
+  
     }//GEN-LAST:event_getParentescoActionPerformed
 
     private void getCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getCorreoActionPerformed
-        correo = getCorreo.getText();
+        
     }//GEN-LAST:event_getCorreoActionPerformed
 
     private void getContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getContrasenaActionPerformed
-        contrasena = getContrasena.getText();
+       
     }//GEN-LAST:event_getContrasenaActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        nombre = getNombre.getText().toString();
+        parentesco = getParentesco.getText().toString();
+        correo = getCorreo.getText().toString();
+        contrasena = getContrasena.getText().toString();
         MiembroFamilia usuario = new MiembroFamilia(nombre, parentesco, correo, contrasena);
         user.agregarFamiliar(usuario);
     }//GEN-LAST:event_btnAgregarActionPerformed
