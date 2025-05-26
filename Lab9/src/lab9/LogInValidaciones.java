@@ -9,7 +9,8 @@ package lab9;
  * @author neptaly
  */
 public class LogInValidaciones {
-    public static MiembroFamilia buscado;
+    public static MiembroFamilia buscado = null;
+    
     public static Integer EXISTE(MiembroFamilia mf, String user, String contraseña){
         
         Integer flag = null;
@@ -27,5 +28,8 @@ public class LogInValidaciones {
             }
         }
         return flag;
+    }
+    public static MiembroFamilia getObj(){
+        return buscado;
     }
 }

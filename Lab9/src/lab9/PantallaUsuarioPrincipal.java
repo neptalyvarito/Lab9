@@ -13,8 +13,11 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame{
     /**
      * Creates new form PantallaUsuarioPrincipal
      */
-    public PantallaUsuarioPrincipal() {
+    public static MiembroFamilia user;
+    public PantallaUsuarioPrincipal(MiembroFamilia user) {
         initComponents();
+        this.user = user;
+        
     }
 
     /**
@@ -93,7 +96,7 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerMisDispositosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerMisDispositosActionPerformed
-        new PantallaControlDispositivos().setVisible(true);
+        new PantallaControlDispositivos(user).setVisible(true);
     }//GEN-LAST:event_btnVerMisDispositosActionPerformed
 
     private void btnGestionarDispositivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionarDispositivosActionPerformed
@@ -101,7 +104,7 @@ public class PantallaUsuarioPrincipal extends javax.swing.JFrame{
     }//GEN-LAST:event_btnGestionarDispositivosActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        bienvenidaNombre.setText(LogIn.mf.getNombre());
+        bienvenidaNombre.setText(user.getNombre());
     }//GEN-LAST:event_formWindowOpened
 
     /**

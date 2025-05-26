@@ -13,8 +13,10 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
     /**
      * Creates new form PantallaUsuariosNormales
      */
-    public PantallaControlDispositivos() {
+    public static MiembroFamilia user;
+    public PantallaControlDispositivos(MiembroFamilia user) {
         initComponents();
+        this.user = user;
     }
 
     /**
@@ -93,8 +95,8 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnPrenderActionPerformed
 
-    public void llenarBox(MiembroFamilia mf){
-        for(Dispositivo disposi : mf.getListaDispositivo()){
+    public void llenarBox(){
+        for(Dispositivo disposi : user.getListaDispositivo()){
             boxListaDispositivo.addItem(disposi.getNombre().toString());
         }
     }
@@ -142,7 +144,6 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaControlDispositivos().setVisible(true);
             }
         });
     }

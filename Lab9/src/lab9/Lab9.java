@@ -9,12 +9,14 @@ import java.util.Scanner;
  * @author neptaly
  */
 public class Lab9 {
-    
+    public static MiembroFamilia user = new MiembroFamilia("Alvaro", "Padre", "nepta", "123");
     public static Scanner sn = new Scanner(System.in);
     
     public static void main(String[] args) {
-       
-        new LogIn().setVisible(true);
+        MiembroFamilia obj = new MiembroFamilia("Elias", "Hermano", "Elias", "321");
+        
+        user.agregarFamiliar(obj);
+        new LogIn(user).setVisible(true);
     }
     
     public static void escribirConsola(String text){

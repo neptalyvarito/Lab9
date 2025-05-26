@@ -13,8 +13,10 @@ public class LogIn extends javax.swing.JFrame{
     /**
      * Creates new form LogIN
      */
-    public LogIn() {
+    public static MiembroFamilia user;
+    public LogIn(MiembroFamilia user) {
         initComponents();
+        this.user = user;
     }
 
     /**
@@ -83,30 +85,26 @@ public class LogIn extends javax.swing.JFrame{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public static MiembroFamilia mf = new MiembroFamilia("Alvaro", "Padre", "nepta", "123");
-    
+   
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
         
-        MiembroFamilia obj = new MiembroFamilia("Elias", "Hermano", "Elias", "321");
-        mf.agregarFamiliar(obj);
         Integer flag = null;
         LogInValidaciones val = new LogInValidaciones();
         do{
-            
         String usuario = getUser.getText();
         String contraseña = getPassword.getText();
-        flag = val.EXISTE(mf, usuario, contraseña);
+        flag = val.EXISTE(user, usuario, contraseña);
         getUser.setText(" ");
         getPassword.setText(" ");
         
         }while(flag == null);
         
         if(flag == 1){
-            new PantallaUsuarioPrincipal().setVisible(true);
+            new PantallaUsuarioPrincipal(LogInValidaciones.getObj()).setVisible(true);
         }
         else
         {
-            new PantallaControlDispositivos().setVisible(true);
+            new PantallaControlDispositivos(LogInValidaciones.getObj()).setVisible(true);
         }
         
     }//GEN-LAST:event_btnLogInActionPerformed
@@ -142,7 +140,7 @@ public class LogIn extends javax.swing.JFrame{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LogIn().setVisible(true);
+            
             }
         });
     }
