@@ -8,7 +8,7 @@ package lab9;
  *
  * @author neptaly
  */
-public class LogIn extends javax.swing.JFrame {
+public class LogIn extends javax.swing.JFrame{
 
     /**
      * Creates new form LogIN
@@ -83,10 +83,29 @@ public class LogIn extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
+        
+        Integer flag = null;
+        LogInValidaciones val = new LogInValidaciones();
+        MiembroFamilia mf = new MiembroFamilia("Alvaro", "Mayo", "nepta", "123");
+        
+        do{
         String usuario = getUser.getText();
         String contraseña = getPassword.getText();
+        flag = val.EXISTE(mf, usuario, contraseña);
+        getUser.setText(" ");
+        getPassword.setText(" ");
+        }while(flag == null);
+        
+        if(flag == 1){
+            new PantallaUsuarioPrincipal().setVisible(true);
+        }
+        else
+        {
+            new PantallaControlDispositivos().setVisible(true);
+        }
+        
     }//GEN-LAST:event_btnLogInActionPerformed
 
     /**
