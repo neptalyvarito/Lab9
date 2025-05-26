@@ -13,6 +13,7 @@ public class EliminarDispositivo extends javax.swing.JFrame {
     /**
      * Creates new form EliminarDipositivo
      */
+    
     public EliminarDispositivo() {
         initComponents();
     }

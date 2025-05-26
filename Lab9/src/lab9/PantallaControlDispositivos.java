@@ -3,8 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package lab9;
-import java.util.List;
-import static lab9.ListaDispositivo.LISTA;
+
 /**
  *
  * @author neptaly
@@ -13,6 +12,8 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
 
     public static MiembroFamilia user;
     public static Dispositivo dispositivo;
+    public static String mensajeDisposii;
+   
     public PantallaControlDispositivos(MiembroFamilia user) {
         initComponents();
         this.user = user;
@@ -28,8 +29,6 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
         btnPrender = new javax.swing.JButton();
         mensajeDePrendiendo = new javax.swing.JLabel();
         btnSeleccionar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -70,10 +69,6 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,38 +79,32 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
                         .addGap(108, 108, 108)
                         .addComponent(mensajeDePrendiendo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(boxListaDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(estadoDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(btnSeleccionar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnApagar)
-                                .addGap(26, 26, 26)
-                                .addComponent(btnPrender)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(22, 22, 22)
+                        .addComponent(boxListaDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(estadoDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSeleccionar)
+                .addGap(18, 18, 18)
+                .addComponent(btnApagar)
+                .addGap(26, 26, 26)
+                .addComponent(btnPrender)
+                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(estadoDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boxListaDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(estadoDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boxListaDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnApagar)
-                            .addComponent(btnPrender)
-                            .addComponent(btnSeleccionar)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnApagar)
+                    .addComponent(btnPrender)
+                    .addComponent(btnSeleccionar))
                 .addGap(18, 18, 18)
                 .addComponent(mensajeDePrendiendo)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -126,7 +115,8 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
 
     private void btnPrenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrenderActionPerformed
         dispositivo.setEstado("prendido");
-        mensajeDePrendiendo.setText(user.prenderDispositivo(dispositivo));     
+        mensajeDisposii = user.prenderDispositivo(dispositivo);
+        mensajeDePrendiendo.setText(mensajeDisposii);     
         estadoDispositivo.setText("El dipositivo se encuentra " +dispositivo.getEstado());
     }//GEN-LAST:event_btnPrenderActionPerformed
     
@@ -144,7 +134,8 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
     }
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
         dispositivo.setEstado("apagado");
-        mensajeDePrendiendo.setText(user.apagarDispositivo(dispositivo));
+        mensajeDisposii = user.apagarDispositivo(dispositivo);
+        mensajeDePrendiendo.setText(mensajeDisposii);
         estadoDispositivo.setText("El dipositivo se encuentra " +dispositivo.getEstado());
     }//GEN-LAST:event_btnApagarActionPerformed
 
@@ -154,6 +145,8 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
         boxListaDispositivo.addItem(" ");
         llenarBox();
         estadoDispositivo.setText("Ningun dipositivo seleccionado");
+   
+          
     }//GEN-LAST:event_formWindowOpened
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
@@ -203,8 +196,6 @@ public class PantallaControlDispositivos extends javax.swing.JFrame {
     private javax.swing.JButton btnPrender;
     private javax.swing.JButton btnSeleccionar;
     private javax.swing.JLabel estadoDispositivo;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel mensajeDePrendiendo;
     // End of variables declaration//GEN-END:variables
 }

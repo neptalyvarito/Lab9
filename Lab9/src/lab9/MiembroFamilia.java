@@ -3,6 +3,7 @@ package lab9;
 
 import java.util.ArrayList;
 import java.util.List;
+import static lab9.ListaDispositivo.LISTA;
 
 public class MiembroFamilia extends Lab9 implements Usuario{
     
@@ -20,7 +21,16 @@ public class MiembroFamilia extends Lab9 implements Usuario{
         this.user = user;
 
     }
-    
+    public void Eliminar(String busqueda){
+        int contador = 0;
+        for(Dispositivo diposi : listaDispositivos){
+            if(diposi.getNombre().equals(busqueda)){
+                listaDispositivos.remove(contador);
+                break;
+            }
+            contador ++;
+        }
+    }
     @Override
     public String prenderDispositivo(Dispositivo dispositivo) {
        return "Usuario " + this.nombre +" está prendiendo "+ dispositivo.getNombre();

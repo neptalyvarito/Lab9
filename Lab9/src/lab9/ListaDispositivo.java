@@ -16,14 +16,26 @@ public class ListaDispositivo {
     }
     public static void eliminarDispositivo(String busqueda){
         int contador = 0;
-        for(Dispositivo diposi : LISTA){
-            if(diposi.getNombre().equals(busqueda)){                
+        for(Dispositivo dispositivo : LISTA){
+            if(dispositivo.getNombre().equals(busqueda)){ 
+                
                 LISTA.remove(contador);
                 break;
             }
             contador ++;
         }
-    }
+     
+        for(MiembroFamilia busquedaFam : Lab9.user.getListaFamiliares()){
+            contador = 0;
+                for(Dispositivo dispositivo : busquedaFam.getListaDispositivo()){
+                    if(dispositivo.getNombre().equals(busqueda)){
+                    busquedaFam.eliminarDispositivo(contador);
+                    }
+                contador ++;
+                }
+            }
+        }
+    
     public static List<Dispositivo> getLista(){
         return LISTA;
     }
